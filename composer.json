@@ -1,0 +1,22 @@
+{
+    "name": "master/beejee-test",
+    "authors": [
+        {
+            "name": "I. Kvilinskiy",
+            "email": "ihor.kvilinskiy@gmail.com"
+        }
+    ],
+    "require": {
+        "php": "^7.4",
+        "ext-pdo": "*",
+        "symfony/yaml": "^5.1",
+        "doctrine/orm": "^2.7"
+    },
+    "autoload": {
+        "psr-4": {"App\\": "src/"}
+    },
+    "config": {
+        "disable-tls": true,
+        "secure-http": false
+    }
+}

@@ -1,0 +1,11 @@
+doctrine:
+  connection:
+    url: 'mysql://root@localhost/tasks'
+    driver: 'pdo_mysql'
+  is_dev_mode: false
+  proxy_dir: null
+  cache: null
+  use_simple_annotation_reader: false
+auth:
+  login: 'admin'
+  password: '123'

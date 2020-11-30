@@ -68,21 +68,23 @@
     </div>
 <?php endforeach; ?>
 
-<nav aria-label="Page navigation example">
-    <ul class="pagination">
-        <?php for ($i = 1; $i <= $pagesCount; $i++): ?>
-            <li class="page-item<?= $i == $page ? ' active' : '' ?>">
-                <?php $pageLink = \App\Services\ServiceContainer::getInstance()->getUrlBuilder()
-                    ->setController('default')
-                    ->setAction('index')
-                    ->setParams(array_merge($_GET, ['page' => $i]))
-                    ->getUrl()
-                ?>
+<?php if($pagesCount > 1): ?>
+    <nav>
+        <ul class="pagination">
+            <?php for ($i = 1; $i <= $pagesCount; $i++): ?>
+                <li class="page-item<?= $i == $page ? ' active' : '' ?>">
+                    <?php $pageLink = \App\Services\ServiceContainer::getInstance()->getUrlBuilder()
+                        ->setController('default')
+                        ->setAction('index')
+                        ->setParams(array_merge($_GET, ['page' => $i]))
+                        ->getUrl()
+                    ?>
 
-                <a class="page-link" href="<?= $pageLink ?>"><?= $i ?></a>
-            </li>
-        <?php endfor; ?>
-    </ul>
-</nav>
+                    <a class="page-link" href="<?= $pageLink ?>"><?= $i ?></a>
+                </li>
+            <?php endfor; ?>
+        </ul>
+    </nav>
+<?php endif; ?>
 
 
